@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Hello, world!</title>
+<style>
+html, body {
+            height: 100%;
+        }
+        #Sidebar {
+            height: 100%;
+            text-align: center;
+            color: black;
+        }
+        .heading{
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .jumbotron{
+            background-color: blue;
+
+        }
+        nav{
+            background-color: blue;
+        }
+        a{
+            color: black;
+        }
+        img {
+            max-width: 100%;
+            height: 2.8rem;
+        }
+        .image{
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .main{
+  width:960px;
+   background:blue;
+   color:#fff;
+    padding:20px;
+     margin:0 auto;
+}
+table{
+  border-collapse:collapse;
+   width:400px;
+}
+td{
+  border:1px solid #fff; 
+  padding-left:5px;
+}
+
+</style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand"><img class="image" src="person.jpg" alt="" width="30" height="24">
+            Navbar</a>
+          <form class="d-flex">
+            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><img class="pull-right" src="person.jpg"  ></li>
+            </ul>
+          </form>
+        </div>
+      </nav>
+    <!-- This container contains the sidebar
+            and main content of the page -->
+    <!-- h-100 takes the full height of the body-->
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-2 bg-primary" id="Sidebar" >
+               
+                <!-- Navigation links in sidebar-->
+                <a href="OEL.html">DashBoard</a>
+                <br/>
+                <br/>
+                <a href="CollectRent.html">Collect Rent</a>
+                <br/>
+                
+            </div>
+            <!--Contains the main content
+                    of the webpage-->
+            <div class="col-10" style="text-align: justify;">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a href="OEL.html"class="nav-link active" aria-current="page" href="#">Products For Rent</a>
+                </li>
+                <li class="nav-item">
+                  <a href="ProductToRent.html" class="nav-link" href="#">Products To rent</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Rented Products</a>
+                </li>
+                
+              </ul>
+       
+              <div class='main'>
+                <table>Item as an tenant<thead>
+                    <tr>
+                        <th>Item</n></th>
+                        <th>Rent</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id='people'>
+
+                </tbody>
+            </table>
+              </div>
+              
+              <div class='main'>
+                
+                <table>Item as owner<thead><tr><th>Item</n></th><th>Rent</th></tr></thead><tbody id='peoples'></tbody></table>
+              </div>
+              
+
+    </div>
+    </div>
+</div>
+<script>
+  var pre = onload, doc, bod, C, E; // for use on other loads
+onload = function(){
+if(pre)pre(); // change var name for other loads
+
+doc = document; bod = doc.body;
+C = function(tag){
+  return doc.createElement(tag);
+}
+E = function(id){
+  return doc.getElementById(id);
+}
+var items = ['Clock, 2000', 'Cycle, 1500', 'MotorCycle, 1000', 'generator, 2500', 'Bag, 200', 'Tools, 1000','Crockery, 1000','Tools, 1000'];
+var people = E('people');
+for(var i=0,fn,ln,nm,row,l=items.length; i<l; i++){
+  nm = items[i].split(/,\s+/); row = C('tr'); fn = C('td'); ln = C('td');
+  fn.innerHTML = nm[0]; ln.innerHTML = nm[1]; row.appendChild(fn); row.appendChild(ln);
+  people.appendChild(row);
+}
+var items = ['Clock, 2000', 'Cycle, 1500', 'MotorCycle, 1000', 'generator, 2500', 'Bag, 200', 'Tools, 1000','Crockery, 1000','Tools, 1000'];
+var peoples = E('peoples');
+for(var i=0,fn,ln,nm,row,l=items.length; i<l; i++){
+  nm = items[i].split(/,\s+/); row = C('tr'); fn = C('td'); ln = C('td');
+  fn.innerHTML = nm[0]; ln.innerHTML = nm[1]; row.appendChild(fn); row.appendChild(ln);
+  peoples.appendChild(row);
+}
+
+}
+
+</script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
